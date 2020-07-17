@@ -6,7 +6,7 @@ cdsapi homepage : https://github.com/ecmwf/cdsapi
 
 1. Write a request in json file – don't forget the file format and name. Eg.
 
-``js
+```js
 {
   "url": "https://cds.climate.copernicus.eu/api/v2",
   "uuid": "<user id>",
@@ -26,12 +26,12 @@ cdsapi homepage : https://github.com/ecmwf/cdsapi
 
 2. Run the command
 
-`sh 
-   docker run -it --rm \
-   -v $(pwd)/request.json:/input/request.json \
-   -v $(pwd)/.:/output \
-   fredmoser/cdsretrieve 
-`
+```sh 
+docker run -it --rm \
+  -v $(pwd)/request.json:/input/request.json \
+  -v $(pwd)/.:/output \
+  fredmoser/cdsretrieve 
+```
 
 Note : the file will be downloaded in the current folder, if not specified otherwise in the docker command. Inside the container, `/input` folder include the request and `/output` is target folder for the downloaded file.
 
